@@ -15,6 +15,10 @@
         margin-right: 15px;
     }
 
+    &__favorite {
+        cursor: pointer;
+    }
+
     &__desc {
         display: flex;
         justify-content: space-between;

@@ -1,60 +1,30 @@
+import React from 'react';
+
 import Card from './components/Card';
 import Drawer from './components/Drawer';
 import Header from './components/Header';
 
-let products = [
-    {
-        title: 'Мужские Кроссовки Nike Blazer Mid Suede',
-        price: '12 999 руб.',
-        imgUrl: '/img/sneakers/sn-1.jpg'
-    },
-    {
-        title: 'Мужские Кроссовки Nike Air Max 270',
-        price: '8 999 руб.',
-        imgUrl: '/img/sneakers/sn-2.jpg'
-    },
-    {
-        title: 'Мужские Кроссовки Nike Blazer Mid Suede',
-        price: '8 499 руб.',
-        imgUrl: '/img/sneakers/sn-3.jpg'
-    },
-    {
-        title: 'Кроссовки Puma X Aka Boku Future Rider',
-        price: '8 999 руб.',
-        imgUrl: '/img/sneakers/sn-4.jpg'
-    },
-    {
-        title: 'Мужские Кроссовки Under Armour Curry 8',
-        price: '15 199 руб.',
-        imgUrl: '/img/sneakers/sn-5.jpg'
-    },
-    {
-        title: 'Мужские Кроссовки Nike Kyrie 7',
-        price: '11 299 руб.',
-        imgUrl: '/img/sneakers/sn-6.jpg'
-    },
-    {
-        title: 'Мужские Кроссовки Jordan Air Jordan 11',
-        price: '16 499 руб.',
-        imgUrl: '/img/sneakers/sn-7.jpg'
-    },
-    {
-        title: 'Мужские Кроссовки Nike Lebron XVIII Low',
-        price: '13 999 руб.',
-        imgUrl: '/img/sneakers/sn-8.jpg'
-    },
-    {
-        title: 'Мужские Кроссовки Nike Air Max 270',
-        price: '8 999 руб.',
-        imgUrl: '/img/sneakers/sn-9.jpg'
-    },
-];
+
 
 function App() {
+    const [items, setItems] = React.useState([]);
+    const [cartItems, setCartItems] = React.useState([]);
+    const [cartOpened, setCatOpened] = React.useState(false);
+
+    React.useEffect(() => {
+        fetch('https://610c7bf666dd8f0017b76dae.mockapi.io/items')
+            .then((response) => response.json())
+            .then((json) => setItems(json));
+    }, []);
+
+    const onAddToCart = (obj) => {
+        setCartItems(prev => [...prev, obj]);
+    };
+
   return (
     <div className="wrapper">
-        <Drawer />
-        <Header />
+        {cartOpened && <Drawer items={cartItems} onClickClose={() => setCatOpened(false)} />}
+        <Header onClickCart={() => setCatOpened(true)} />
         <div className="content">
             <div className="header-content">
                 <h1>Все кроссовки</h1>
@@ -67,11 +37,13 @@ function App() {
 
             <div className="cards">
                 {
-                    products.map(item => (
+                    items.map(item => (
                         <Card 
                             title={item.title}
                             price={item.price}
                             imgUrl={item.imgUrl}
+                            onPlus={onAddToCart}
+                            onFavorite={() => console.log('fav')}
                          />
                     ))
                 }
