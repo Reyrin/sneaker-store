@@ -12,6 +12,11 @@ body {
     box-sizing: border-box;
 }
 
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
 .wrapper {
     max-width: 1080px;
     margin: 50px auto;
@@ -79,6 +84,8 @@ body {
     border: 1px solid #f3f3f3;
     border-radius: 10px;
     padding: 0 15px;
+    padding-right: 25px;
+    position: relative;
 
     input {
         border: 0;
@@ -86,6 +93,15 @@ body {
         font-size: 16px;
         width: 200px;
         outline: none;
+    }
+
+    .clear {
+        position: absolute;
+        top: 13px;
+        right: 15px;
+        width: 18px;
+        height: 18px;
+        cursor: pointer;
     }
 }
 
