@@ -1,3 +1,4 @@
+import Info from '../Info';
 import styles from './Drawer.module.scss';
 
 function Drawer({onClickClose, onRemove, items = []}) {
@@ -14,7 +15,7 @@ function Drawer({onClickClose, onRemove, items = []}) {
                         <div className={styles.cart}>
                             {
                                 items.map(item => (
-                                    <div className={styles.cart__item}>
+                                    <div key={item.id} className={styles.cart__item}>
                                         <div 
                                         className={styles.cart__img}
                                         style={{ backgroundImage: `url(${item.imgUrl})` }}></div>
@@ -46,15 +47,7 @@ function Drawer({onClickClose, onRemove, items = []}) {
                         </div>
                     </>
                 ) : (
-                    <div className={styles.cartEmpty}>
-                        <img className={styles.box} width="120px" height="120px" src="/img/empty-cart.jpg" alt="Empty" />
-                        <h2>Корзина пустая</h2>
-                        <p>Добавьте хотя бы одну пару кроссовок, чтобы сделать заказ.</p>
-                        <button className={styles.btnGreen}  onClick={onClickClose}>
-                            <img src="/img/arrow.svg" alt="Arrow" />
-                            Вернуться назад
-                        </button>
-                    </div>
+                    <Info title={'Корзина пустая'} description={'Добавьте хотя бы одну пару кроссовок, чтобы сделать заказ.'} image={'/img/empty-cart.jpg'} />
                 )}
             </div>
         </div>
