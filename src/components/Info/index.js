@@ -8,7 +8,7 @@ function Info({ title, description, image }) {
 
     return (
         <div className={styles.cartEmpty}>
-            <img className={styles.box} width="120px" height="120px" src={image} alt="Empty" />
+            <img className={styles.box} width="120px" src={image} alt="Empty" />
             <h2>{title}</h2>
             <p>{description}</p>
             <button className={styles.btnGreen}  onClick={() => setCartOpened(false)}>

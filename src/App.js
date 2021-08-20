@@ -9,6 +9,7 @@ import Header from './components/Header';
 
 import Home from './pages/Home';
 import Favorites from './pages/Favorites';
+import Orders from './pages/Orders';
 
 function App() {
     const [items, setItems] = React.useState([]);
@@ -77,7 +78,7 @@ function App() {
     }
 
   return (
-      <AppContext.Provider value={{items, cartItems, favorites, onAddToFavorite, isItemAdded, setCartOpened}}>
+      <AppContext.Provider value={{items, cartItems, favorites, setCartItems, onAddToFavorite, isItemAdded, setCartOpened}}>
           <div className="wrapper">
             {cartOpened && <Drawer items={cartItems} onClickClose={() => setCartOpened(false)} onRemove={onRemoveItem} />}
             <Header onClickCart={() => setCartOpened(true)} />
@@ -100,7 +101,7 @@ function App() {
             </Route>
 
             <Route path="/orders" exact>
-                
+                <Orders />
             </Route>
         </div>
       </AppContext.Provider>

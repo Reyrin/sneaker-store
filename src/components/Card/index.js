@@ -56,7 +56,7 @@ function Card({
                 <div className={styles.card__desc}>
                     <div className={styles.card__price}>
                         <span>Цена:</span>
-                        <b>{price}</b>
+                        <b>{price} руб.</b>
                     </div>
 
                     <img className={styles.plus} src={isItemAdded(id) ? '/img/btn-checked.svg' : '/img/btn-plus.svg'} onClick={onClickPlus}  alt="Plus" />
