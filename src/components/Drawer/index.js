@@ -8,8 +8,12 @@ import styles from './Drawer.module.scss';
 
 const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
-function Drawer({onClickClose, onRemove, items = []}) {
+function Drawer({onClickClose, onRemove, items = [], opened}) {
     const { cartItems, setCartItems } = React.useContext(AppContext);
+
+    if (opened) {
+        document.body.style.overflow = "hidden"
+    }
 
     const [orderId, setOrderId] = React.useState(null);
     const [isOrderComplete, setIsOrderComplete] = React.useState(false);
@@ -42,7 +46,7 @@ function Drawer({onClickClose, onRemove, items = []}) {
     };
 
     return (
-        <div className={styles.overlay}>
+        <div className={`${styles.overlay} ${opened ? styles.overlayVisible : ''}`}>
             <div className={styles.drawer}>
                 <h2>
                     Корзина 
