@@ -12,7 +12,9 @@ function Drawer({onClickClose, onRemove, items = [], opened}) {
     const { cartItems, setCartItems } = React.useContext(AppContext);
 
     if (opened) {
-        document.body.style.overflow = "hidden"
+        document.body.style.overflow = "hidden";
+    } else {
+        document.body.style.overflow = "";
     }
 
     const [orderId, setOrderId] = React.useState(null);
