@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+
 import Info from '../Info';
 
 import AppContext from '../../context';
@@ -96,6 +97,7 @@ function Drawer({onClickClose, onRemove, items = [], opened}) {
                         title={isOrderComplete ? 'Заказ оформлен!' : 'Корзина пустая'} 
                         description={isOrderComplete ? `Ваш заказ #${orderId} скоро будет передан курьерской доставке` : 'Добавьте хотя бы одну пару кроссовок, чтобы сделать заказ.'} 
                         image={isOrderComplete ? '/img/complete-order.jpg' : '/img/empty-cart.jpg'} 
+                        width={'120px'}
                     />
                 )}
             </div>

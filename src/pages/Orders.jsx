@@ -2,6 +2,7 @@ import React from 'react';
 import axios from 'axios';
 
 import Card from '../components/Card';
+import Info from '../components/Info';
 
 import AppContext from '../context';
 
@@ -29,17 +30,29 @@ function Orders() {
             <div className="header-content">
                 <h1>Мои заказы</h1>
             </div>
-            <div className="cards">
-                {
-                    (isLoading ? [...Array(12)] : orders).map((item, index) => (
-                        <Card
-                            key={index}
-                            loading={isLoading}
-                            {...item}
-                        />
-                    ))
-                }
-            </div>
+            {
+                orders.length > 0 ? (
+                    <div className="cards">
+                        {
+                            (isLoading ? [...Array(12)] : orders).map((item, index) => (
+                                <Card
+                                    key={index}
+                                    loading={isLoading}
+                                    {...item}
+                                />
+                            ))
+                        }
+                    </div>
+                ) : (
+                    <Info
+                        title={'У вас нет заказов'}
+                        description={'Оформите хотя бы один заказ'}
+                        image={'img/no-orders.jpg'}
+                        width={'70px'}
+                        toHome={true}
+                    />
+                )
+            }
         </div>
     );
 }
