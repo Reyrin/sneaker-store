@@ -1,4 +1,4 @@
-# sneaker-store
+# 👟 sneaker-store
 
 ![react-store](https://user-images.githubusercontent.com/51198976/131197707-61a2be28-fd02-4cd4-b766-1e7d077d2d40.png)
 
