@@ -10,8 +10,9 @@
 3. React-Hooks
 4. React Context
 5. React Skeleton
-6. Axios
-7. SCSS
+6. Mock API
+7. Axios
+8. SCSS
 
 ## Installation
 ```
