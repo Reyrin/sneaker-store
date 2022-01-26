@@ -167,3 +167,20 @@
         background: darken(#9dd558, 5%);
     }
 }
+
+
+@media (max-width: 650px) {
+    .drawer {
+        width: 100%;
+    }
+}
+
+@media (max-width: 400px) {
+    .cart {
+        &__item {
+            p {
+                font-size: 13px;
+            }
+        }
+    }
+}

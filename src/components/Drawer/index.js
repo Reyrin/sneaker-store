@@ -53,7 +53,7 @@ function Drawer({onClickClose, onRemove, items = [], opened}) {
             <div className={styles.drawer}>
                 <h2>
                     Корзина 
-                    <img src="/img/btn-remove.svg" alt="Close" onClick={onClickClose} />
+                    <img src="img/btn-remove.svg" alt="Close" onClick={onClickClose} />
                 </h2>
 
                 {items.length > 0 ? (
@@ -69,7 +69,7 @@ function Drawer({onClickClose, onRemove, items = [], opened}) {
                                             <p className={styles.cart__title}>{item.title}</p>
                                             <b className={styles.cart__price}>{item.price}</b>
                                         </div>
-                                        <img className={styles.cart__remove} src="/img/btn-remove.svg" alt="Remove" onClick={() => onRemove(item.id)} />
+                                        <img className={styles.cart__remove} src="img/btn-remove.svg" alt="Remove" onClick={() => onRemove(item.id)} />
                                     </div>
                                 ))
                             }
@@ -88,7 +88,7 @@ function Drawer({onClickClose, onRemove, items = [], opened}) {
                                 </li>
                             </ul>
                             <button disabled={isLoading} className={styles.btnGreen} onClick={onClickOrder}>
-                                Оформить заказ <img src="/img/arrow.svg" alt="Arrow" />
+                                Оформить заказ <img src="img/arrow.svg" alt="Arrow" />
                             </button>
                         </div>
                     </>
@@ -96,7 +96,7 @@ function Drawer({onClickClose, onRemove, items = [], opened}) {
                     <Info 
                         title={isOrderComplete ? 'Заказ оформлен!' : 'Корзина пустая'} 
                         description={isOrderComplete ? `Ваш заказ #${orderId} скоро будет передан курьерской доставке` : 'Добавьте хотя бы одну пару кроссовок, чтобы сделать заказ.'} 
-                        image={isOrderComplete ? '/img/complete-order.jpg' : '/img/empty-cart.jpg'} 
+                        image={isOrderComplete ? 'img/complete-order.jpg' : 'img/empty-cart.jpg'} 
                         width={'120px'}
                     />
                 )}

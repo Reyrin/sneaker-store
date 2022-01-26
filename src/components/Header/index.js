@@ -12,9 +12,9 @@ function Header(props) {
 
     return (
         <header className={styles.header}>
-            <Link to="/">
+            <Link to={'/'}>
                 <div className={styles.header__left}>
-                    <img width={40} height={40} src="/img/logo.png" alt="Logo" />
+                    <img width={40} height={40} src="img/logo.png" alt="Logo" />
                     <div>
                         <h3>React Sheakers</h3>
                         <p>Магазин лучших кроссовок</p>
@@ -23,17 +23,17 @@ function Header(props) {
             </Link>
             <ul className={styles.header__right}>
                 <li onClick={props.onClickCart}>
-                    <img src="/img/cart.svg" alt="Cart" />
+                    <img src="img/cart.svg" alt="Cart" />
                     <span>{totalPrice} руб.</span>
                 </li>
-                <Link to="/favorites">
+                <Link to={'/favorites'}>
                    <li>
-                        <img src="/img/heart.svg" alt="Heart" />
+                        <img src="img/heart.svg" alt="Heart" />
                     </li> 
                 </Link>
-                <Link to="/orders">
+                <Link to={'/orders'}>
                     <li>
-                        <img src="/img/user.svg" alt="User" />
+                        <img src="img/user.svg" alt="User" />
                     </li>
                 </Link>
                 

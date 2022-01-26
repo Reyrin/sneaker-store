@@ -14,15 +14,15 @@ function Info({ title, description, image, width, toHome = false }) {
             <p>{description}</p>
             {
                 toHome ? (
-                    <Link to="/">
+                    <Link to={'/'}>
                         <button className={styles.btnGreen}>
-                            <img src="/img/arrow.svg" alt="Arrow" />
+                            <img src="img/arrow.svg" alt="Arrow" />
                             Вернуться назад
                         </button>
                     </Link>
                 ) : (
                     <button className={styles.btnGreen}  onClick={() => setCartOpened(false)}>
-                        <img src="/img/arrow.svg" alt="Arrow" />
+                        <img src="img/arrow.svg" alt="Arrow" />
                         Вернуться назад
                     </button>
                 )

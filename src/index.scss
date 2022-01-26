@@ -69,6 +69,7 @@ a {
 
 .cards {
     display: flex;
+    justify-content: space-around;
     flex-wrap: wrap;
 }
 
@@ -107,5 +108,31 @@ a {
 
     &:active {
         background: darken(#9dd558, 5%);
+    }
+}
+
+@media (max-width: 650px) {
+    .content {
+        padding: 0;
+    }
+
+    .search {
+        margin-top: 15px;
+    }
+
+    header {
+        display: flex;
+        flex-direction: column;
+        padding: 25px;
+
+        a {
+            margin-bottom: 25px;
+        }
+    }
+
+    .header-content {
+        display: flex;
+        flex-direction: column;
+        padding: 25px;
     }
 }
