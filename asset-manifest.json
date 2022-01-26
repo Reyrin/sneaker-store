@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/sneaker-store/static/css/main.d8b079b3.chunk.css",
-    "main.js": "/sneaker-store/static/js/main.0a65d53e.chunk.js",
-    "main.js.map": "/sneaker-store/static/js/main.0a65d53e.chunk.js.map",
+    "main.js": "/sneaker-store/static/js/main.10d8ad45.chunk.js",
+    "main.js.map": "/sneaker-store/static/js/main.10d8ad45.chunk.js.map",
     "runtime-main.js": "/sneaker-store/static/js/runtime-main.f890e3bb.js",
     "runtime-main.js.map": "/sneaker-store/static/js/runtime-main.f890e3bb.js.map",
     "static/js/2.5305d07b.chunk.js": "/sneaker-store/static/js/2.5305d07b.chunk.js",
@@ -15,6 +15,6 @@
     "static/js/runtime-main.f890e3bb.js",
     "static/js/2.5305d07b.chunk.js",
     "static/css/main.d8b079b3.chunk.css",
-    "static/js/main.0a65d53e.chunk.js"
+    "static/js/main.10d8ad45.chunk.js"
   ]
 }
